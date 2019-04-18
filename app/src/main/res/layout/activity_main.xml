@@ -19,4 +19,5 @@
         android:max="100"
         android:progress="25" />
 
+
 </FrameLayout>
