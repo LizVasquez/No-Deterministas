@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NoDeterministas</string>
+    <string name="title_usuario">Usuario</string>
+    <string name="title_contraseña">Contraseña</string>
+    <string name="seguro_datos">Segur@ de los datos ingresados</string>
+    <string name="olvide_mi_contraseña"><u>Olvide mi contraseña </u></string>
+    <string name="button_registrarse">Registrarse</string>
+    <string name="button_resgistrarse_con">Registrarse_con</string>
 </resources>
