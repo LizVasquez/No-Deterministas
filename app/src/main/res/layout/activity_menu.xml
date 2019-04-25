@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/diamante"
     tools:context=".menu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_weight="2"
-    >
+    android:layout_weight="2">
 
     <LinearLayout
 
@@ -23,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:fontFamily="@font/claymale_peronal_use_only"
+            android:fontFamily="@font/knewave"
             android:text="BIENVENIDOS!"
             android:textSize="40sp" />
 
@@ -40,6 +38,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
         android:text="EVENTOS"
         android:layout_weight="1"
         />
@@ -50,6 +49,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
         android:text="YA ESTOY EN LA FIESTA"
         android:layout_weight="1"
         />
@@ -59,6 +59,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
         android:text="CONTACTOS DE EMERGENCIA"
         android:layout_weight="1"
         />
@@ -68,6 +69,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
         android:text="ORGANIZA TU FIESTA"
         android:layout_weight="1"
 
