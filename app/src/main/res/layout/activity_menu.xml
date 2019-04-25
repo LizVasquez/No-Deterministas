@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/diamante"
+    tools:context=".menu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="2">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/knewave"
+            android:text="BIENVENIDOS!"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/beer" />
+
+    </LinearLayout>
+    <Button
+        android:layout_height="0dp"
+        android:layout_width="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
+        android:text="EVENTOS"
+        android:layout_weight="1"
+        />
+    <Button
+
+        android:layout_height="0dp"
+        android:layout_width="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
+        android:text="YA ESTOY EN LA FIESTA"
+        android:layout_weight="1"
+        />
+    <Button
+        android:layout_height="0dp"
+        android:layout_width="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
+        android:text="CONTACTOS DE EMERGENCIA"
+        android:layout_weight="1"
+        />
+    <Button
+        android:layout_height="0dp"
+        android:layout_width="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/knewave"
+        android:text="ORGANIZA TU FIESTA"
+        android:layout_weight="1"
+
+        />
+
+
+
+
+
+</LinearLayout>
