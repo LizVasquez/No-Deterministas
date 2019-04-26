@@ -9,16 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Busquemos" />
-        <activity android:name=".Bienvenidos">
+        <activity android:name=".Mapa">
+            </activity>
+        <activity android:name=".Login" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+             <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+
+        <activity android:name=".Busquemos" />
+        <activity android:name=".Bienvenidos" />
+
+
+        //MAPAS......
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC2ndInFAVoBVpD_XWQnZ40eRwNM20u2WY" />
+
+
     </application>
 
 </manifest>
