@@ -17,7 +17,7 @@ public class Busquemos extends AppCompatActivity {
         google_maps.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view){
 
-                Toast.makeText(Busquemos.this, "Acabas de hacer login!!", Toast.LENGTH_LONG).show();
+               
                 // Creamos un intent para ir a otro activity
                 Intent intent = new Intent(Busquemos.this,Mapa.class);
                 startActivity(intent);
