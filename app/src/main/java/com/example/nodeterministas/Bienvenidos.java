@@ -37,24 +37,22 @@ public class Bienvenidos extends AppCompatActivity implements View.OnClickListen
         if (view.getId() == yaEstoyFienta.getId()) {
 //            Intent intent = new Intent(this, ____.class);
 //            startActivity(intent);
-            Toast.makeText(this, "Falta", Toast.LENGTH_LONG).show();
+
 
         }
         if (view.getId() == contactEmergencia.getId()) {
 //            Intent intent = new Intent(this, ____.class);
 //            startActivity(intent);
-            Toast.makeText(this, "Falta", Toast.LENGTH_LONG).show();
+
         }
         if (view.getId() == yaEstoyFienta.getId()) {
-//            Intent intent = new Intent(this, ____.class);
-//            startActivity(intent);
-            Toast.makeText(this, "Falta", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this,Temporizador.class);
+            startActivity(intent);
 
         }
         if (view.getId() == organizaTuFiesta.getId()) {
 //            Intent intent = new Intent(this, ____.class);
 //            startActivity(intent);
-            Toast.makeText(this, "Falta", Toast.LENGTH_LONG).show();
 
         }
     }

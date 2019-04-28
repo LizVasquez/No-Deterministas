@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#D84A8DA7"
+    android:layout_height="match_parent"
+    tools:context=".Temporizador">
+
+    <EditText
+        android:id="@+id/edit_text_inputtime"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_view_countdown"
+        android:layout_centerHorizontal="true"
+        android:hint="Minutos"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <Button
+        android:id="@+id/button_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edit_text_inputtime"
+        android:layout_toEndOf="@+id/edit_text_inputtime"
+        android:text="Cambiar"
+        android:layout_toRightOf="@+id/edit_text_inputtime" />
+
+    <TextView
+        android:id="@+id/text_view_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="60sp" />
+
+    <Button
+        android:id="@+id/button_start_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_countdown"
+        android:layout_centerHorizontal="true"
+        android:text="Empezar" />
+
+
+
+    <EditText
+        android:id="@+id/edit_text_clave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_start_pause"
+        android:layout_centerHorizontal="true"
+        android:hint="Clave"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="50dp"
+        android:inputType="text"
+         />
+
+    <Button
+        android:id="@+id/button_comprobar_clave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_clave"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="11dp"
+        android:text="Confirmar Clave"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:layout_marginLeft="11dp">
+
+    </Button>
+
+
+
+
+</RelativeLayout>
