@@ -21,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Busquemos" />
+        <activity android:name=".Busquemos" >
+        </activity>
         <activity android:name=".Bienvenidos" />
 
         <meta-data
