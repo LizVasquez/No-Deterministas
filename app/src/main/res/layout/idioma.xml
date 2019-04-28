@@ -2,75 +2,66 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/diamante"
-    android:orientation="vertical"
-    tools:context=".Busquemos">
-
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".Idioma"
+    android:background="@drawable/fondo_humo"
+    android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/text_view_busquemos"
+        android:id="@+id/text_view_idioma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
         android:fontFamily="@font/knewave"
-        android:text="BUSQUEMOS"
+        android:text="Elige tu Idioma"
+        android:textColor="#E4D236"
         android:textSize="30dp" />
 
-    <ImageView
-        android:id="@+id/drawable_lupa"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_below="@+id/text_view_busquemos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/lupa" />
-
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/drawable_lupa"
+        android:layout_below="@+id/text_view_idioma"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button_quiendacasa"
+            android:id="@+id/button_español"
             android:layout_width="350dp"
             android:layout_height="90dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="50dp"
             android:layout_weight="1"
             android:background="@drawable/button_background_menu"
-            android:drawableStart="@drawable/circle_party"
-            android:drawableLeft="@drawable/circle_party"
             android:fontFamily="@font/knewave"
             android:gravity="center"
             android:paddingStart="70dp"
             android:paddingEnd="70dp"
-            android:text="Quien da casa" />
+            android:text="Español"
+         android:textColor="#E4D236"/>
 
         <Button
-            android:id="@+id/google_maps"
+            android:id="@+id/button_ingles"
             android:layout_width="350dp"
             android:layout_height="90dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="50dp"
             android:layout_weight="1"
             android:background="@drawable/button_background_menu"
-            android:drawableStart="@drawable/circle_ubication"
-            android:drawableLeft="@drawable/circle_ubication"
             android:fontFamily="@font/knewave"
             android:gravity="center"
             android:paddingStart="70dp"
             android:paddingEnd="70dp"
-            android:text="Google Maps" />
-
+            android:text="Ingles"
+            android:textColor="#E4D236"/> />
 
     </LinearLayout>
+
+
+
+
 </RelativeLayout>
