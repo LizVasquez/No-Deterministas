@@ -98,7 +98,7 @@ public class Temporizador extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                     mostrarDialog(v);
-//                    mTextViewClave.setText(Clave);
+
                 }
 
         });
