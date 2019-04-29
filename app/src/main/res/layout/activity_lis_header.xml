@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/diamante"
+    >
+
+    <TextView
+        android:id="@+id/nomApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:backgroundTintMode="src_atop"
+        android:gravity="center_horizontal"
+        android:text="@string/button_bloqueo"
+        android:textAppearance="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="478dp" />
+
+
+</LinearLayout>
+
+
+
