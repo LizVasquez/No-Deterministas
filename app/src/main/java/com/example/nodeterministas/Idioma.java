@@ -17,7 +17,7 @@ public class Idioma extends AppCompatActivity {
          button_español.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (view.getId() == button_español.getId()) {
-                    Intent intent = new Intent(Idioma.this, Bienvenidos.class);
+                    Intent intent = new Intent(Idioma.this, BienvenidosMenu.class);
                     startActivity(intent);
                 }
                 if (view.getId() ==button_ingles.getId()) {

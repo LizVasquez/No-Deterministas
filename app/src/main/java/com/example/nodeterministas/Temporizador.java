@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import java.util.Locale;
 import java.util.Random;
-import java.util.Timer;
 
 public class Temporizador extends AppCompatActivity {
 
@@ -81,7 +80,7 @@ public class Temporizador extends AppCompatActivity {
                 //verifica si la clave es correcta y manda a otrsa pantalla
                 String clave = mEditTextClave.getText().toString();
                 if (clave.equals("123")) {
-                    Intent intent = new Intent(Temporizador.this, Bienvenidos.class);
+                    Intent intent = new Intent(Temporizador.this, BienvenidosMenu.class);
                     pauseTimer();
                     resetTimer();
                     startActivity(intent);
