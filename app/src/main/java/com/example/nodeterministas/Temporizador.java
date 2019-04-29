@@ -1,8 +1,10 @@
 package com.example.nodeterministas;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -241,6 +243,24 @@ public class Temporizador extends AppCompatActivity {
             }
         }
     }
+
+    public void mostrarDialog(View view) {
+        AlertDialog.Builder alertDialogBuilder =
+                new AlertDialog.Builder(this); // Es necesario crear un "builder" para agregarle opciones
+        alertDialogBuilder.setTitle("Estas seguro de bloquear las aplicaciones?");
+        alertDialogBuilder.setMessage("Las aplicaciones seleccionadas se bloquearan cuando el tiempo escogido concluya");
+        alertDialogBuilder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(Temporizador.this, "Aceptaste", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alertDialogBuilder.setCancelable(false);
+        // Generamos nuestro AlertDialog desde el builder, y lo mostramos
+        alertDialogBuilder.create().show();
+    }
+
+
 
 
 
