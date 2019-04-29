@@ -97,8 +97,8 @@ public class Temporizador extends AppCompatActivity {
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startTimer();
-//                    mTextViewClave.setText(Clave);
+                    mostrarDialog(v);
+
                 }
 
         });
@@ -247,16 +247,27 @@ public class Temporizador extends AppCompatActivity {
     public void mostrarDialog(View view) {
         AlertDialog.Builder alertDialogBuilder =
                 new AlertDialog.Builder(this); // Es necesario crear un "builder" para agregarle opciones
-        alertDialogBuilder.setTitle("Estas seguro de bloquear las aplicaciones?");
-        alertDialogBuilder.setMessage("Las aplicaciones seleccionadas se bloquearan cuando el tiempo escogido concluya");
-        alertDialogBuilder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setTitle("Estas seguro de bloquear las aplicaciones?")
+
+                .setCancelable(false)
+
+        .setMessage("Las aplicaciones seleccionadas se bloquearan cuando el tiempo escogido concluya")
+
+
+        .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(Temporizador.this, "Aceptaste", Toast.LENGTH_SHORT).show();
+                startTimer();
             }
-        });
-        alertDialogBuilder.setCancelable(false);
-        // Generamos nuestro AlertDialog desde el builder, y lo mostramos
+        })
+                .setNegativeButton("Rechazar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
         alertDialogBuilder.create().show();
     }
 
