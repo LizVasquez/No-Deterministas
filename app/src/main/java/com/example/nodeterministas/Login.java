@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                Toast.makeText(Login.this,"Bienvenido " + stringUsuario,Toast.LENGTH_LONG).show();
 
                // Creamos un intent para ir a otro activity
-               Intent intent = new Intent(this, Bienvenidos.class);
+               Intent intent = new Intent(this, Idioma.class);
                startActivity(intent);
 
            }else {
