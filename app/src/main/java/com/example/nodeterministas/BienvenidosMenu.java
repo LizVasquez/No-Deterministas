@@ -66,8 +66,8 @@ public class BienvenidosMenu extends AppCompatActivity
 
         }
         if (view.getId() == organizaTuFiesta.getId()) {
-//            Intent intent = new Intent(this, ____.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, OrganizarFiesta.class);
+            startActivity(intent);
 
         }}
     @Override
