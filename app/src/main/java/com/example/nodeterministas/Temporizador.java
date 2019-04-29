@@ -1,8 +1,10 @@
 package com.example.nodeterministas;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +16,6 @@ import android.widget.Toast;
 
 import java.util.Locale;
 import java.util.Random;
-import java.util.Timer;
 
 public class Temporizador extends AppCompatActivity {
 
@@ -81,7 +82,7 @@ public class Temporizador extends AppCompatActivity {
                 //verifica si la clave es correcta y manda a otrsa pantalla
                 String clave = mEditTextClave.getText().toString();
                 if (clave.equals("123")) {
-                    Intent intent = new Intent(Temporizador.this, Bienvenidos.class);
+                    Intent intent = new Intent(Temporizador.this, BienvenidosMenu.class);
                     pauseTimer();
                     resetTimer();
                     startActivity(intent);
@@ -242,6 +243,24 @@ public class Temporizador extends AppCompatActivity {
             }
         }
     }
+
+    public void mostrarDialog(View view) {
+        AlertDialog.Builder alertDialogBuilder =
+                new AlertDialog.Builder(this); // Es necesario crear un "builder" para agregarle opciones
+        alertDialogBuilder.setTitle("Estas seguro de bloquear las aplicaciones?");
+        alertDialogBuilder.setMessage("Las aplicaciones seleccionadas se bloquearan cuando el tiempo escogido concluya");
+        alertDialogBuilder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(Temporizador.this, "Aceptaste", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alertDialogBuilder.setCancelable(false);
+        // Generamos nuestro AlertDialog desde el builder, y lo mostramos
+        alertDialogBuilder.create().show();
+    }
+
+
 
 
 

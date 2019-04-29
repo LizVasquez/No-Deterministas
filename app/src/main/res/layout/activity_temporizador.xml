@@ -66,6 +66,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="11dp"
         android:text="Confirmar Clave"
+        android:onClick="mostrarDialog"
         android:visibility="invisible"
         tools:visibility="visible"
         android:layout_marginLeft="11dp">
