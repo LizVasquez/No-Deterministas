@@ -1,12 +1,16 @@
-package com.example.nodeterministas;
+package com.example.nodeterministas.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.nodeterministas.R;
+
+public class MainActivity extends Activity {
+
+    private final int DURACION_SPLASH = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
 
             public void run() {
-                Intent intent =new Intent(MainActivity.this ,Login.class);
+                Intent intent =new Intent(MainActivity.this , Login.class);
                 startActivity(intent);
 
             }
         },
                 //TIEMPO EN MILISEGUNDOS
-                5000);
+                DURACION_SPLASH);
     }
 }

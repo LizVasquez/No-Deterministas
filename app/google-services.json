@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "15611426933",
+    "firebase_url": "https://nodeterministas-b22a9.firebaseio.com",
+    "project_id": "nodeterministas-b22a9",
+    "storage_bucket": "nodeterministas-b22a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15611426933:android:eb66bcdc50099057",
+        "android_client_info": {
+          "package_name": "com.example.nodeterministas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15611426933-ls7es84u5ma37vlv2q37p83k6qa05ke5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASmTsYGjEWVB3CKW_OMPJ1ad6cAae5xF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15611426933-ls7es84u5ma37vlv2q37p83k6qa05ke5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

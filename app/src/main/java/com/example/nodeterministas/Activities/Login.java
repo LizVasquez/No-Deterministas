@@ -1,4 +1,4 @@
-package com.example.nodeterministas;
+package com.example.nodeterministas.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.nodeterministas.BienvenidosMenu;
+import com.example.nodeterministas.R;
+
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
-    Button registrate,facebook,google;
+    Button registrate,facebook,google,iniciarSesion;
     private EditText usuario,password;
     //contraseña
     String x = "1";
@@ -22,6 +25,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_login);
 
         registrate = findViewById(R.id.bottom_registrate);
+        iniciarSesion = findViewById(R.id.bottom_iniciar_sesion);
        facebook=findViewById(R.id.button_facebook);
        google=findViewById(R.id.button_google);
        usuario= (EditText)findViewById(R.id.editText_usuaario);
@@ -35,9 +39,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==registrate.getId()){
+        if(view.getId()==iniciarSesion.getId()){
              VerificarUsuario();
 
+        }if(view.getId() == registrate.getId()){
+            Intent intent = new Intent(this, Register.class);
+            startActivity(intent);
         }
     }
 
