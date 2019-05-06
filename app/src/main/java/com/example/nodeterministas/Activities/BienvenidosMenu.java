@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.nodeterministas.BloquearAplicaciones;
 import com.example.nodeterministas.Busquemos;
 import com.example.nodeterministas.Main;
 import com.example.nodeterministas.OrganizarFiesta;
@@ -83,9 +84,10 @@ public class BienvenidosMenu extends AppCompatActivity
 
         }
         if (view.getId() == yaEstoyFienta.getId()) {
-            Intent intent = new Intent(this, Temporizador.class);
+            Intent intent = new Intent(this, BloquearAplicaciones.class);
             startActivity(intent);
-
+            //Intent intent = new Intent(this, Temporizador.class);
+            //startActivity(intent);
         }
         if (view.getId() == organizaTuFiesta.getId()) {
             Intent intent = new Intent(this, OrganizarFiesta.class);
