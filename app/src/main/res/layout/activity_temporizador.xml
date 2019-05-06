@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/text_view_countdown"
         android:layout_centerHorizontal="true"
-        android:hint="Minutos"
+        android:hint="@string/minutos"
         android:inputType="number"
         android:maxLength="4" />
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/edit_text_inputtime"
         android:layout_toEndOf="@+id/edit_text_inputtime"
-        android:text="Cambiar"
+        android:text="@string/button_cambiar"
         android:layout_toRightOf="@+id/edit_text_inputtime" />
 
     <TextView
@@ -42,8 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_countdown"
         android:layout_centerHorizontal="true"
-        android:text="Empezar" />
-
+        android:text="@string/empezar" />
 
 
     <EditText
@@ -52,11 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_start_pause"
         android:layout_centerHorizontal="true"
-        android:hint="Clave"
-        android:layout_marginRight="100dp"
         android:layout_marginTop="50dp"
-        android:inputType="text"
-         />
+        android:layout_marginRight="100dp"
+        android:hint="@string/clave"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/button_comprobar_clave"
@@ -65,7 +63,7 @@
         android:layout_below="@+id/edit_text_clave"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="11dp"
-        android:text="Confirmar Clave"
+        android:text="@string/confirmar_clave"
 
         android:visibility="invisible"
         tools:visibility="visible"

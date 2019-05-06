@@ -3,7 +3,6 @@ package com.example.nodeterministas.Activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.nodeterministas.R;
@@ -25,8 +24,11 @@ public class MainActivity extends Activity {
 
 
             public void run() {
-                Intent intent =new Intent(MainActivity.this , Login.class);
-                startActivity(intent);
+
+                    Intent Login = new Intent(getApplicationContext(), Login.class);
+                    startActivity(Login);
+                    finish();
+
 
             }
         },

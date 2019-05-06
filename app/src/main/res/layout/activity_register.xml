@@ -57,7 +57,7 @@
             android:background="@drawable/button_background"
             android:ems="10"
             android:hint="@string/edit_text_mail"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:textColorHint="#BE020000" />
 
         <EditText

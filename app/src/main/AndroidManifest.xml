@@ -13,10 +13,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".Activities.Register"></activity>
         <activity
-            android:name=".BienvenidosMenu"
+            android:name=".Activities.BienvenidosMenu"
             android:label="@string/title_activity_bienvenidos_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Idioma" />
+        <activity android:name=".Activities.Idioma" />
         <activity android:name=".Temporizador" />
         <activity android:name=".Mapa" />
         <activity android:name=".Activities.Login" />

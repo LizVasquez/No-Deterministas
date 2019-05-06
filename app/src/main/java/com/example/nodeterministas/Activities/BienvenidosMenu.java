@@ -1,4 +1,4 @@
-package com.example.nodeterministas;
+package com.example.nodeterministas.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +11,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.nodeterministas.Activities.Login;
+import com.bumptech.glide.Glide;
+import com.example.nodeterministas.Busquemos;
+import com.example.nodeterministas.Main;
+import com.example.nodeterministas.OrganizarFiesta;
+import com.example.nodeterministas.R;
+import com.example.nodeterministas.Temporizador;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class BienvenidosMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Button eventos, yaEstoyFienta, contactEmergencia, organizaTuFiesta;
 
+    FirebaseAuth mAuth;
+    FirebaseUser currentUser ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +41,14 @@ public class BienvenidosMenu extends AppCompatActivity
         yaEstoyFienta = findViewById(R.id.button_ya_estoy_en_fiesta);
         contactEmergencia = findViewById(R.id.button_contc_de_emergencia);
         organizaTuFiesta = findViewById(R.id.button_organiza_tu_fiesta);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        //puedes usar la propiedad currentUser para obtener el usuario que accedió
+        // si no accedió ningún usuario, el valor de currentUser es null:
+        currentUser = mAuth.getCurrentUser();
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -43,6 +62,8 @@ public class BienvenidosMenu extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        updateNavHeader();
     }
     @Override
     public void onClick(View view) {
@@ -62,7 +83,7 @@ public class BienvenidosMenu extends AppCompatActivity
 
         }
         if (view.getId() == yaEstoyFienta.getId()) {
-            Intent intent = new Intent(this,Temporizador.class);
+            Intent intent = new Intent(this, Temporizador.class);
             startActivity(intent);
 
         }
@@ -90,10 +111,13 @@ public class BienvenidosMenu extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_idioma) {
             HacerIntent(Idioma.class);
-        } else if (id == R.id.nav_gallery) {
-           HacerIntent(Login.class);
+        } else if (id == R.id.nav_cerrar_sesion) {
+            FirebaseAuth.getInstance().signOut();
+            Intent loginActivity = new Intent(getApplicationContext(),Login.class);
+            startActivity(loginActivity);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -113,4 +137,25 @@ public class BienvenidosMenu extends AppCompatActivity
 //    }
 
 
+
+    public void updateNavHeader() {
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = headerView.findViewById(R.id.nav_username);
+        TextView navUserMail = headerView.findViewById(R.id.nav_user_mail);
+        ImageView navUserPhoto = headerView.findViewById(R.id.nav_user_photo);
+
+        navUserMail.setText(currentUser.getEmail());
+        navUsername.setText(currentUser.getDisplayName());
+
+        // ahora usaremos Glide para cargar la imagen del usuario
+        // Primero necesitamos importar la biblioteca
+
+        Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhoto);
+
+
+
+
+    }
 }

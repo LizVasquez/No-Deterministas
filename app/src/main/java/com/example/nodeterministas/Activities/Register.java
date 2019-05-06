@@ -1,7 +1,6 @@
 package com.example.nodeterministas.Activities;
 
 import android.Manifest;
-import android.accounts.Account;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -18,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.nodeterministas.BienvenidosMenu;
 import com.example.nodeterministas.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -212,8 +210,8 @@ public class Register extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(), BienvenidosMenu.class);
-        startActivity(homeActivity);
+        Intent Bienvenidos = new Intent(getApplicationContext(), BienvenidosMenu.class);
+        startActivity(Bienvenidos);
         finish();
 
 

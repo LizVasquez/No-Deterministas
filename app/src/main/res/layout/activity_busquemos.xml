@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/knewave"
-        android:text="BUSQUEMOS"
+        android:text="@string/busquemos"
         android:textSize="30dp" />
 
     <ImageView
@@ -53,7 +53,7 @@
             android:gravity="center"
             android:paddingStart="70dp"
             android:paddingEnd="70dp"
-            android:text="Quien da casa" />
+            android:text="@string/quien_da_casa" />
 
         <Button
             android:id="@+id/google_maps"
@@ -69,7 +69,7 @@
             android:gravity="center"
             android:paddingStart="70dp"
             android:paddingEnd="70dp"
-            android:text="Google Maps" />
+            android:text="@string/google_maps" />
 
 
     </LinearLayout>

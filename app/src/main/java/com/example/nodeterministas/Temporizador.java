@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nodeterministas.Activities.BienvenidosMenu;
+
 import java.util.Locale;
 import java.util.Random;
 

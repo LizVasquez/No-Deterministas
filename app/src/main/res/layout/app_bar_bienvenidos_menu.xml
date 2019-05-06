@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BienvenidosMenu">
+    tools:context=".Activities.BienvenidosMenu">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/knewave"
-                android:text="BIENVENIDOS!"
+                android:text="@string/bienvenidos"
                 android:textSize="40sp" />
 
             <ImageView
@@ -71,7 +71,7 @@
                     android:background="@drawable/button_background_menu"
                     android:fontFamily="@font/knewave"
                     android:onClick="onClick"
-                    android:text="EVENTOS" />
+                    android:text="@string/eventos" />
 
                 <Button
                     android:id="@+id/button_ya_estoy_en_fiesta"
@@ -83,7 +83,7 @@
                     android:background="@drawable/button_background_menu"
                     android:fontFamily="@font/knewave"
                     android:onClick="onClick"
-                    android:text="YA ESTOY EN LA FIESTA" />
+                    android:text="@string/ya_estoy_en_la_fiesta" />
 
                 <Button
                     android:id="@+id/button_contc_de_emergencia"
@@ -95,7 +95,7 @@
                     android:background="@drawable/button_background_menu"
                     android:fontFamily="@font/knewave"
                     android:onClick="onClick"
-                    android:text="CONTACTOS DE EMERGENCIA" />
+                    android:text="@string/contactos_de_emergencia" />
 
                 <Button
                     android:id="@+id/button_organiza_tu_fiesta"
@@ -107,7 +107,7 @@
                     android:background="@drawable/button_background_menu"
                     android:fontFamily="@font/knewave"
                     android:onClick="onClick"
-                    android:text="ORGANIZA TU FIESTA"
+                    android:text="@string/orgaqniza_tu_fiesta"
 
                     />
 

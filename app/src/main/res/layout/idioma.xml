@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".Idioma"
     android:background="@drawable/fondo_humo"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activities.Idioma">
 
 
     <TextView
@@ -14,10 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
         android:fontFamily="@font/knewave"
-        android:text="Elige tu Idioma"
+        android:text="@string/elige_tu_idioma"
         android:textColor="#E4D236"
         android:textSize="30dp" />
 
@@ -39,10 +39,12 @@
             android:background="@drawable/button_background_menu"
             android:fontFamily="@font/knewave"
             android:gravity="center"
+            android:onClick="onClick"
             android:paddingStart="70dp"
             android:paddingEnd="70dp"
-            android:text="Español"
-         android:textColor="#E4D236"/>
+            android:text="@string/español"
+            android:textColor="#E4D236" />
+
 
         <Button
             android:id="@+id/button_ingles"
@@ -56,12 +58,11 @@
             android:gravity="center"
             android:paddingStart="70dp"
             android:paddingEnd="70dp"
-            android:text="Ingles"
-            android:textColor="#E4D236"/> />
+            android:text="@string/ingles"
+            android:textColor="#E4D236"
+            android:onClick="onClick"/>
 
     </LinearLayout>
-
-
 
 
 </RelativeLayout>
