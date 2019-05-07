@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
 
     <android.support.constraint.ConstraintLayout
@@ -15,17 +16,18 @@
             android:id="@+id/popup_user_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="#ffffff"
+            android:background="#6AE7D3"
             android:padding="8dp"
+            android:src="@drawable/avatar"
             app:layout_constraintBottom_toTopOf="@+id/popup_fecha"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/popup_title"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            android:src="@drawable/avatar"
-            />
+            app:layout_constraintVertical_bias="0.0" />
+
 
         <EditText
+
             android:id="@+id/popup_title"
             android:layout_width="0dp"
             android:layout_height="70dp"
@@ -98,7 +100,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/popup_description"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:src="@drawable/agregar_foto"/>
 
         <ImageView
 
@@ -128,8 +130,10 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/popup_bton_add"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/popup_bton_add"
-            app:layout_constraintTop_toTopOf="@+id/popup_bton_add" />
+            app:layout_constraintTop_toTopOf="@+id/popup_bton_add"
+            app:layout_constraintVertical_bias="0.0" />
     </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>
