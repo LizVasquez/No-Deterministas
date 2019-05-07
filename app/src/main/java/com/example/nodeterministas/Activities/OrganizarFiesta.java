@@ -92,7 +92,7 @@ public class OrganizarFiesta extends AppCompatActivity {
         popAddPost.setContentView(R.layout.popup_add_post);
         popAddPost.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popAddPost.getWindow().setLayout(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.WRAP_CONTENT);
-        popAddPost.getWindow().getAttributes().gravity = Gravity.TOP;
+        popAddPost.getWindow().getAttributes().gravity = Gravity.CENTER;
 
 
         popupUserImage = popAddPost.findViewById(R.id.popup_user_image);
