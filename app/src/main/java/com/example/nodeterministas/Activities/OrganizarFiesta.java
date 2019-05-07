@@ -15,7 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import com.example.aws.blogapp.Models.Post;
+
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -119,70 +119,6 @@ public class OrganizarFiesta extends AppCompatActivity {
                 popupAddBton.setVisibility(View.INVISIBLE);
                 popupClickProgress.setVisibility(View.VISIBLE);
 
-                if (!popupEditTextTitle.getText().toString().isEmpty()
-                        && !popupEditTextFecha.getText().toString().isEmpty()
-                        && !popupEditTextBebidas.getText().toString().isEmpty()
-                        && !popupEditTextMusica.getText().toString().isEmpty()
-                        && !popupEditTextDescription.getText().toString().isEmpty()
-                        && pickedImgUri != null ) {
-
-                    //  Crear objeto de publicación y agregarlo fireBase
-                    // primero tenemos que subir la imagen de la publicación
-                    // acceder al almacenamiento firebase
-                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("blog_images");
-                    final StorageReference imageFilePath = storageReference.child(pickedImgUri.getLastPathSegment());
-                    imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                            imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    String imageDownlaodLink = uri.toString();
-                                    // create post Object
-
-                                    Post post = new Post(popupEditTextTitle.getText().toString(),
-                                           popupEditTextFecha.getText().toString(),
-                                            popupEditTextBebidas.getText().toString().isEmpty(),
-                                            popupEditTextMusica.getText().toString().isEmpty(),
-                                           popupEditTextDescription.getText().toString().isEmpty(),
-                                            imageDownlaodLink,
-                                            currentUser.getUid(),
-                                            currentUser.getPhotoUrl().toString());
-
-                                    // Add post to firebase database
-
-                                    addPost(post);
-
-
-
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    // something goes wrong uploading picture
-
-                                    showMessage(e.getMessage());
-                                    popupClickProgress.setVisibility(View.INVISIBLE);
-                                    popupAddBtn.setVisibility(View.VISIBLE);
-
-
-
-                                }
-                            });
-
-
-                        }
-                    });
-
-
-
-
-
-
-
-
-                }
             }
         });
     }
@@ -232,6 +168,7 @@ public class OrganizarFiesta extends AppCompatActivity {
             // el usuario ha elegido exitosamente una imagen
             // Necesitamos guardar su referencia a una variable Uri
             pickedImgUri = data.getData();
+            popupPublicationImage.setImageURI(pickedImgUri);
 
 
         }
