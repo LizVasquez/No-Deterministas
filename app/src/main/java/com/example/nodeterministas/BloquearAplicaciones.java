@@ -10,29 +10,31 @@ import java.util.List;
 
 public class BloquearAplicaciones extends AppCompatActivity {
 
-    RecyclerView rv;
-    public List<Aplicacion> listaAplicaciones;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bloquear_aplicaciones);
 
-        rv = (RecyclerView)findViewById(R.id.rv);
-        rv.setHasFixedSize(true);
+        ArrayList<FuenteAplicacion> lista =  new ArrayList<>();
+        lista.add(new FuenteAplicacion("Facebook", R.drawable.facebook_logo));
+        lista.add(new FuenteAplicacion("Instagram", R.drawable.instagram));
+        lista.add(new FuenteAplicacion("Twitter", R.drawable.twitter));
+        lista.add(new FuenteAplicacion("Facebook", R.drawable.facebook_logo));
+        lista.add(new FuenteAplicacion("Instagram", R.drawable.instagram));
+        lista.add(new FuenteAplicacion("Twitter", R.drawable.twitter));
+        lista.add(new FuenteAplicacion("Facebook", R.drawable.facebook_logo));
+        lista.add(new FuenteAplicacion("Instagram", R.drawable.instagram));
+        lista.add(new FuenteAplicacion("Twitter", R.drawable.twitter));
 
-        LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
-        rv.setLayoutManager(llm);
 
-        // Con este metodo inicializamos el arreglo de lista de aplicaciones para introducirlos en nuestro recyclerview
-        RVAdapter adapter = new RVAdapter(listaAplicaciones);
-        rv.setAdapter(adapter);
+        RecyclerView contenedor = (RecyclerView) findViewById(R.id.contenedor);
+        contenedor.setHasFixedSize(false);
+
+        LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext());
+        layout.setOrientation(LinearLayoutManager.VERTICAL);
+
+        contenedor.setAdapter(new AdaptadorRecyclerAplicaciones(lista));
+        contenedor.setLayoutManager(layout);
     }
 
-    public void inicializarDatos(){
-        listaAplicaciones = new ArrayList<>();
-        listaAplicaciones.add(new Aplicacion("Facebook", R.drawable.facebook_logo));
-        listaAplicaciones.add(new Aplicacion("Instagram", R.drawable.instagram));
-    }
 }

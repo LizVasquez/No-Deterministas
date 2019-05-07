@@ -4,6 +4,7 @@
     android:layout_height="@dimen/altura_cardview"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
     android:id="@+id/cv">
 
     <LinearLayout
@@ -30,10 +31,10 @@
 
         <Switch
             android:id="@+id/switch_aplicacion"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:layout_marginTop="@dimen/switchaplicacion_margin"
-            android:layout_marginLeft="@dimen/switchaplicacion_marginleft" />
+            android:layout_marginLeft="80dp" />
 
     </LinearLayout>
 

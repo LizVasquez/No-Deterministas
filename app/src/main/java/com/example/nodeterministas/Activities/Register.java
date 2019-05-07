@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.nodeterministas.BloquearAplicaciones;
 import com.example.nodeterministas.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -80,6 +81,13 @@ public class Register extends AppCompatActivity {
 
                      // algo sale mal: todos los campos deben ser rellenados
                     // necesitamos mostrar un mensaje de error
+
+                    //EJEMPLO RECYCLER
+                    Intent intent = new Intent(getApplicationContext(), BloquearAplicaciones.class);
+                    startActivity(intent);
+
+
+
                     showMessage("Por favor llene todos los campos");
                     regBtn.setVisibility(View.VISIBLE);
                     loadingProgress.setVisibility(View.INVISIBLE);

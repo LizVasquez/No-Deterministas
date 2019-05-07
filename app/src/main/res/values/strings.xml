@@ -49,4 +49,5 @@
     <string name="español">Español</string>
     <string name="ingles">Ingles</string>
     <string name="nombre_aplicacion_ejemplo">Facebook</string>
+    <string name="enviar_datos_btn">Enviar Datos</string>
 </resources>
