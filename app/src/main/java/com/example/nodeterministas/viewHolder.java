@@ -8,6 +8,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     Switch switchAplicacion;
@@ -22,6 +25,7 @@ public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickL
 
         switchAplicacion.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View view) {

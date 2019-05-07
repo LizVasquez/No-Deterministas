@@ -84,10 +84,8 @@ public class BienvenidosMenu extends AppCompatActivity
 
         }
         if (view.getId() == yaEstoyFienta.getId()) {
-            Intent intent = new Intent(this, BloquearAplicaciones.class);
+            Intent intent = new Intent(this, Temporizador.class);
             startActivity(intent);
-            //Intent intent = new Intent(this, Temporizador.class);
-            //startActivity(intent);
         }
         if (view.getId() == organizaTuFiesta.getId()) {
             Intent intent = new Intent(this, OrganizarFiesta.class);
