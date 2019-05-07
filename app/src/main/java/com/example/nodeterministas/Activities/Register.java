@@ -1,6 +1,8 @@
 package com.example.nodeterministas.Activities;
 
 import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -18,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.nodeterministas.R;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -218,7 +221,7 @@ public class Register extends AppCompatActivity {
     }
 
     // metodo para mostrar mensajes
-    private void showMessage(String message) {
+    void showMessage(String message) {
 
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
 
@@ -236,7 +239,7 @@ public class Register extends AppCompatActivity {
     }
 
 
-    private void checkAndRequestForPermission() {
+    void checkAndRequestForPermission() {
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)

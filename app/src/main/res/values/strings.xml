@@ -17,7 +17,7 @@
     <string name="contacto">Nombre</string>
     <string name="nombre_fiesta">Nombre de la fiesta</string>
     <string name="fecha">Fecha</string>
-    <string name="descripcion">descripcion</string>
+    <string name="descripcion">Descripción</string>
     <string name="detalles_importantes">detalles importantes</string>
     <string name="aceptar">aceptar</string>
     <string name="button_bloqueo">Bloquear aplicaciones</string>
@@ -48,4 +48,7 @@
     <string name="elige_tu_idioma">Elige tu Idioma</string>
     <string name="español">Español</string>
     <string name="ingles">Ingles</string>
+    <string name="tipo_de_bebidas">Tipo de Bebidas</string>
+    <string name="tipo_de_musica">Tipo de música</string>
+    <string name="titulo">Título</string>
 </resources>
