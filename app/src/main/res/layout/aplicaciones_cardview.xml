@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="@dimen/altura_cardview"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:id="@+id/cv"
+    app:cardBackgroundColor="@color/transparentWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imagen_aplicacion"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/imagenaplicacion_margin"
+            android:layout_marginLeft="@dimen/imagenaplicacion_margin"
+            android:src="@drawable/facebook_logo"/>
+
+        <TextView
+            android:id="@+id/nombre_aplicacion"
+            android:text="@string/nombre_aplicacion_ejemplo"
+            android:textSize="@dimen/nombreaplicacion_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/textoaplicacion_margin"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/white"/>
+
+        <Switch
+            android:id="@+id/switch_aplicacion"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/switchaplicacion_margin"
+            android:layout_marginLeft="80dp" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

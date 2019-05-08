@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -35,7 +34,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class OrganizarFiesta extends AppCompatActivity {
+public class OrganizarFiestas extends AppCompatActivity {
 
 
     private static final int PReqCode = 2;
@@ -49,11 +48,10 @@ public class OrganizarFiesta extends AppCompatActivity {
     ProgressBar popupClickProgress;
     private Uri pickedImgUri = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_organizar_fiesta);
+        setContentView(R.layout.activity_organizar_fiestas);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -129,7 +127,7 @@ public class OrganizarFiesta extends AppCompatActivity {
                 if (!popupEditTextTitle.getText().toString().isEmpty()
                         && !popupEditTextDescription.getText().toString().isEmpty()
                         && pickedImgUri!= null
-                        ) {
+                ) {
                     // todo esta bien sin valor vacío o nulo
                     // TODO Crear objeto de publicación y agregarlo a la base de datos de firebase
                     // primero tenemos que subir la imagen de la publicación
@@ -261,4 +259,5 @@ public class OrganizarFiesta extends AppCompatActivity {
         }
 
     }
+
 }

@@ -16,8 +16,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         //CREAREMOS UN HANDLER DONDE LE DECIMOS QUE ESPERE UNOS SEGUNDOS Y MUESTRE OTRA PANTALLA
         new Handler().postDelayed(new Runnable() {
             @Override

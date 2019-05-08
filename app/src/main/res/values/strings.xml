@@ -48,7 +48,11 @@
     <string name="elige_tu_idioma">Elige tu Idioma</string>
     <string name="español">Español</string>
     <string name="ingles">Ingles</string>
+    <string name="nombre_aplicacion_ejemplo">Facebook</string>
+    <string name="enviar_datos_btn">Enviar Datos</string>
+    <string name="otras_aplicaciones">Otras Aplicaciones</string>
     <string name="tipo_de_bebidas">Tipo de Bebidas</string>
     <string name="tipo_de_musica">Tipo de música</string>
     <string name="titulo">Título</string>
+    <string name="confirmar_cambios">Confirmar Cambios</string>
 </resources>

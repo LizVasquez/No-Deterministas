@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.OrganizarFiesta"></activity>
+        <activity android:name=".Activities.OrganizarFiestas"></activity>
+        <activity android:name=".Activities.ListaAplicacionesInstaladas"></activity>
+        <activity android:name=".BloquearAplicaciones" />
         <activity android:name=".Activities.Register" />
         <activity
             android:name=".Activities.BienvenidosMenu"

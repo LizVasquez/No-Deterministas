@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.nodeterministas.BloquearAplicaciones;
 import com.example.nodeterministas.R;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -87,9 +88,16 @@ public class Register extends AppCompatActivity {
                     loadingProgress.setVisibility(View.INVISIBLE);
 
 
+
                 }
                 if (!password.equals(password2)) {
                     showMessage("Las contraseñas no coinciden");
+
+                     // algo sale mal: todos los campos deben ser rellenados
+                    // necesitamos mostrar un mensaje de error
+
+                    showMessage("Por favor llene todos los campos");
+
                     regBtn.setVisibility(View.VISIBLE);
                     loadingProgress.setVisibility(View.INVISIBLE);
 

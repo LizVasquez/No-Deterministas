@@ -5,4 +5,10 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="altura_cardview">100dp</dimen>
+    <dimen name="imagenaplicacion_margin">35dp</dimen>
+    <dimen name="textoaplicacion_margin">35dp</dimen>
+    <dimen name="nombreaplicacion_size">20sp</dimen>
+    <dimen name="switchaplicacion_margin">40dp</dimen>
+    <dimen name="switchaplicacion_marginleft">100dp</dimen>
 </resources>
