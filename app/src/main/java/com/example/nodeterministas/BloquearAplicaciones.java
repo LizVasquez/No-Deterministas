@@ -20,6 +20,7 @@ import java.util.List;
 public class BloquearAplicaciones extends AppCompatActivity implements View.OnClickListener{
 
     Button enviarDatosBtn;
+    Button otrasAplicacionesBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,9 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
 
         enviarDatosBtn = (Button)findViewById(R.id.enviarDatos_btn);
         enviarDatosBtn.setOnClickListener(this);
+
+        otrasAplicacionesBtn = findViewById(R.id.otrasaplicaciones_btn);
+        otrasAplicacionesBtn.setOnClickListener(this);
 
         //get a list of installed apps.
         final PackageManager pm = getPackageManager();
@@ -80,10 +84,13 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.enviarDatos_btn){
+        if(view.getId() == R.id.otrasaplicaciones_btn){
             //Intent intent = new Intent(enviarDatosBtn.getContext(), Temporizador.class);
-            //Intent
-            Intent intent = new Intent(enviarDatosBtn.getContext(), ListaAplicacionesInstaladas.class);
+            Intent intent = new Intent(otrasAplicacionesBtn.getContext(), ListaAplicacionesInstaladas.class);
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.enviarDatos_btn){
+            Intent intent = new Intent(enviarDatosBtn.getContext(), Temporizador.class);
             startActivity(intent);
         }
     }

@@ -11,36 +11,28 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="450dp">
 
     </android.support.v7.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/otrasaplicaciones_tv"
+
+
+
+    <Button
+        android:id="@+id/otrasaplicaciones_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_margin="20dp"
-        android:text="@string/otras_aplicaciones"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/white">
-
-        <ListView
-            android:id="@+id/todasaplicaciones_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-
-    </LinearLayout>
+        android:text="@string/otras_aplicaciones"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/enviarDatos_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enviar_datos_btn"
+        android:layout_marginTop="5dp"
         android:background="@color/colorAccent"
         android:textColor="@color/white"/>
 

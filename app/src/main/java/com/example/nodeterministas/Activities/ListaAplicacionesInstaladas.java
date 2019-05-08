@@ -4,9 +4,14 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.nodeterministas.AdaptadorRecyclerAplicaciones;
+import com.example.nodeterministas.AdaptadorRecyclerOtrasApp;
+import com.example.nodeterministas.FuenteOtrasAplicaciones;
 import com.example.nodeterministas.R;
 
 import java.util.ArrayList;
@@ -37,12 +42,19 @@ public class ListaAplicacionesInstaladas extends AppCompatActivity {
             }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ListaApps);
+        List<FuenteOtrasAplicaciones> listaOtrasApp = new ArrayList<>();
+        for(int i=0; i<ListaApps.size(); i++){
+            listaOtrasApp.add(new FuenteOtrasAplicaciones(ListaApps.get(i)));
+        }
 
-        listaAplicaciones = (ListView)findViewById(R.id.listaaplicaciones_listview);
-        listaAplicaciones.setAdapter(adapter);
+        RecyclerView otrasAppRv = (RecyclerView) findViewById(R.id.contenedor_aplicaciones);
+        otrasAppRv.setHasFixedSize(false);
 
+        LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext());
+        layout.setOrientation(LinearLayoutManager.VERTICAL);
 
+        otrasAppRv.setAdapter(new AdaptadorRecyclerOtrasApp(listaOtrasApp));
+        otrasAppRv.setLayoutManager(layout);
 
     }
 }

@@ -5,11 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ListaAplicacionesInstaladas">
+    android:orientation="vertical"
+    tools:context=".Activities.ListaAplicacionesInstaladas"
+    android:background="@drawable/fondo_login">
 
-    <ListView
-        android:id="@+id/listaaplicaciones_listview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/contenedor_aplicaciones"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="600dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/confirmarcambios_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmar_cambios"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
