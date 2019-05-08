@@ -73,19 +73,13 @@ public class BienvenidosMenu extends AppCompatActivity
             startActivity(intent);
         }
         if (view.getId() == yaEstoyFienta.getId()) {
-//            Intent intent = new Intent(this, ____.class);
-//            startActivity(intent);
-
-
+            Intent intent = new Intent(getApplicationContext(), BloquearAplicaciones.class);
+            startActivity(intent);
         }
         if (view.getId() == contactEmergencia.getId()) {
             Intent intent = new Intent(this, Main.class);
             startActivity(intent);
 
-        }
-        if (view.getId() == yaEstoyFienta.getId()) {
-            Intent intent = new Intent(this, Temporizador.class);
-            startActivity(intent);
         }
         if (view.getId() == organizaTuFiesta.getId()) {
             Intent intent = new Intent(this, OrganizarFiesta.class);

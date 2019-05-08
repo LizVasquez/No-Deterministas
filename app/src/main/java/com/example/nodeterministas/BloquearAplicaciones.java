@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.nodeterministas.Activities.ListaAplicacionesInstaladas;
 
@@ -41,7 +43,6 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
             }
         }
 
-
         ArrayList<FuenteAplicacion> lista =  new ArrayList<>();
         for(int i=0; i<ListaApps.size(); i++){
             switch (ListaApps.get(i)){
@@ -70,8 +71,6 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
 
         contenedor.setAdapter(new AdaptadorRecyclerAplicaciones(lista));
         contenedor.setLayoutManager(layout);
-
-        ViewHolder
 
     }
 

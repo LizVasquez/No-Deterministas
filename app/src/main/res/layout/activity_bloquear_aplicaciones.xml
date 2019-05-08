@@ -5,14 +5,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo_login">
     
     <android.support.v7.widget.RecyclerView
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
-        android:layout_height="500dp">
+        android:layout_height="400dp">
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/otrasaplicaciones_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:text="@string/otras_aplicaciones"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/white">
+
+        <ListView
+            android:id="@+id/todasaplicaciones_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/enviarDatos_btn"
@@ -21,5 +43,7 @@
         android:text="@string/enviar_datos_btn"
         android:background="@color/colorAccent"
         android:textColor="@color/white"/>
+
+
 
 </LinearLayout>
