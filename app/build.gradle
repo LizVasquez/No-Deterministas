@@ -34,7 +34,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-auth:16.2.1'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    //firebase storage
     implementation 'com.google.firebase:firebase-storage:16.0.1'
+
+    //firebase Database
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+
 
     // Glide library es hacer que el desplazamiento de cualquier tipo de lista de imágenes sea lo más suave y
     // rápido posible, pero Glide también es efectivo para casi cualquier caso en el que necesite buscar, cambiar el tamaño y mostrar una imagen remota.

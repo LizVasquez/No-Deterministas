@@ -42,6 +42,7 @@ public class Register extends AppCompatActivity {
     private EditText userEmail, userPassword, userPAssword2, userName;
     private ProgressBar loadingProgress;
     private Button regBtn;
+    private Boolean Foto = false;
 
     private FirebaseAuth mAuth;
 
@@ -77,18 +78,28 @@ public class Register extends AppCompatActivity {
                 final String password2 = userPAssword2.getText().toString();
                 final String name = userName.getText().toString();
 
-                if (email.isEmpty() || name.isEmpty() || password.isEmpty() || !password.equals(password2)) {
+                if (email.isEmpty() || name.isEmpty() || password.isEmpty()) {
 
-
-
-                     // algo sale mal: todos los campos deben ser rellenados
+                    // algo sale mal: todos los campos deben ser rellenados
                     // necesitamos mostrar un mensaje de error
-                    showMessage("Por favor llene todos los campos");
+                    showMessage("Por favor complete todos los campos");
                     regBtn.setVisibility(View.VISIBLE);
                     loadingProgress.setVisibility(View.INVISIBLE);
 
 
-                } else {
+                }
+                if (!password.equals(password2)) {
+                    showMessage("Las contraseñas no coinciden");
+                    regBtn.setVisibility(View.VISIBLE);
+                    loadingProgress.setVisibility(View.INVISIBLE);
+
+                }
+                if (Foto == false) {
+                    showMessage("Inserte una foto de perfil");
+                    regBtn.setVisibility(View.VISIBLE);
+                    loadingProgress.setVisibility(View.INVISIBLE);
+
+                }else {
 
                     // todo está bien y todos los campos están completos ahora podemos comenzar a crear una cuenta de usuario
                     // El método CreateUserAccount intentará crear el usuario si el correo electrónico es válido
@@ -110,14 +121,9 @@ public class Register extends AppCompatActivity {
                     checkAndRequestForPermission();
 
 
-                }
-                else
-                {
+                } else {
                     openGallery();
                 }
-
-
-
 
 
             }
@@ -129,8 +135,8 @@ public class Register extends AppCompatActivity {
 
     private void CreateUserAccount(String email, final String name, String password) {
 
-      // este método crea una cuenta de usuario con un correo
-       // electrónico y contraseña específicos
+        // este método crea una cuenta de usuario con un correo
+        // electrónico y contraseña específicos
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -139,7 +145,7 @@ public class Register extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
 
-                             // cuenta de usuario creada exitosamente
+                            // cuenta de usuario creada exitosamente
                             showMessage("Cuenta creada");
 
                             // después de crear la cuenta de usuario, necesitamos actualizar su foto de perfil y su nombre
@@ -178,7 +184,7 @@ public class Register extends AppCompatActivity {
                 imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                     // uri contiene la url de la imagen del usuario
+                        // uri contiene la url de la imagen del usuario
 
 
                         UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
@@ -246,12 +252,9 @@ public class Register extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-                Toast.makeText(this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please accept for required permission", Toast.LENGTH_SHORT).show();
 
-            }
-
-            else
-            {
+            } else {
                 // los usuarios conceden permisos
                 // a la app mientras se ejecutan
                 ActivityCompat.requestPermissions(this,
@@ -259,8 +262,7 @@ public class Register extends AppCompatActivity {
                         PReqCode);
 
             }
-        }
-        else
+        } else
             openGallery();
 
     }
@@ -273,11 +275,13 @@ public class Register extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null) {
 
 
-             // el usuario ha elegido exitosamente una imagen
+            // el usuario ha elegido exitosamente una imagen
             // Necesitamos guardar su referencia a una variable Uri
             pickedImgUri = data.getData();
             //para cargar la imagen que escogimos
             ImgUserPhoto.setImageURI(pickedImgUri);
+
+            Foto = true;
 
 
         }

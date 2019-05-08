@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "15611426933",
-    "firebase_url": "https://nodeterministas-b22a9.firebaseio.com",
-    "project_id": "nodeterministas-b22a9",
-    "storage_bucket": "nodeterministas-b22a9.appspot.com"
+    "project_number": "584009760344",
+    "firebase_url": "https://nodeterministas-48eae.firebaseio.com",
+    "project_id": "nodeterministas-48eae",
+    "storage_bucket": "nodeterministas-48eae.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:15611426933:android:eb66bcdc50099057",
+        "mobilesdk_app_id": "1:584009760344:android:eb66bcdc50099057",
         "android_client_info": {
           "package_name": "com.example.nodeterministas"
         }
       },
       "oauth_client": [
         {
-          "client_id": "15611426933-ls7es84u5ma37vlv2q37p83k6qa05ke5.apps.googleusercontent.com",
+          "client_id": "584009760344-rs8rek8k1044k293nh3pph83pjka6166.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nodeterministas",
+            "certificate_hash": "e88df9c35b1358286dd702ae9568b78edec13a92"
+          }
+        },
+        {
+          "client_id": "584009760344-0bd89tul2f8rek0e0in3d37d051kepvv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyASmTsYGjEWVB3CKW_OMPJ1ad6cAae5xF4"
+          "current_key": "AIzaSyAP1eDffJuFdxkkmeeIS_JhiLzcAf8ZeR0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "15611426933-ls7es84u5ma37vlv2q37p83k6qa05ke5.apps.googleusercontent.com",
+              "client_id": "584009760344-0bd89tul2f8rek0e0in3d37d051kepvv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

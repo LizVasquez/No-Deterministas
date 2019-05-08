@@ -23,11 +23,14 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+import com.example.nodeterministas.Models.Post;
 import com.example.nodeterministas.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -56,6 +59,7 @@ public class OrganizarFiesta extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+
         iniPopup();
         setupPopupImageClick();
 
@@ -73,7 +77,7 @@ public class OrganizarFiesta extends AppCompatActivity {
 
         //  necesitamos abrir la galería
         // antes de abrir la galería, debemos comprobar si nuestra aplicación tiene acceso a los archivos de usuario
-        // eso esta en la clase organizar fiesta
+        // ncesitamos un permiso
         popupPublicationImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,9 +102,10 @@ public class OrganizarFiesta extends AppCompatActivity {
         popupUserImage = popAddPost.findViewById(R.id.popup_user_image);
         popupPublicationImage = popAddPost.findViewById(R.id.popup_img_add);
         popupEditTextTitle = popAddPost.findViewById(R.id.popup_title);
-        popupEditTextFecha = popAddPost.findViewById(R.id.popup_fecha);
-        popupEditTextBebidas = popAddPost.findViewById(R.id.popup_bebidas);
-        popupEditTextMusica = popAddPost.findViewById(R.id.popup_musica);
+//        popupEditTextFecha = popAddPost.findViewById(R.id.popup_fecha);
+//
+//        popupEditTextBebidas = popAddPost.findViewById(R.id.popup_bebidas);
+//        popupEditTextMusica = popAddPost.findViewById(R.id.popup_musica);
         popupEditTextDescription = popAddPost.findViewById(R.id.popup_description);
         popupAddBton = popAddPost.findViewById(R.id.popup_bton_add);
         popupClickProgress = popAddPost.findViewById(R.id.popup_progressBar);
@@ -119,10 +124,92 @@ public class OrganizarFiesta extends AppCompatActivity {
                 popupAddBton.setVisibility(View.INVISIBLE);
                 popupClickProgress.setVisibility(View.VISIBLE);
 
+                // necesitamos probar todos los campos de entrada  y publicar la imagen
+
+                if (!popupEditTextTitle.getText().toString().isEmpty()
+                        && !popupEditTextDescription.getText().toString().isEmpty()
+                        && pickedImgUri!= null
+                        ) {
+                    // todo esta bien sin valor vacío o nulo
+                    // TODO Crear objeto de publicación y agregarlo a la base de datos de firebase
+                    // primero tenemos que subir la imagen de la publicación
+                    // acceder al almacenamiento firebase
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("imagenes_publicadas");
+                    final StorageReference imageFilePath = storageReference.child(pickedImgUri.getLastPathSegment());
+                    imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                            imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String imageDownlaodLink = uri.toString();
+
+                                    // crear Object
+
+                                    Post post = new Post(popupEditTextTitle.getText().toString(),
+                                            popupEditTextDescription.getText().toString(),
+                                            imageDownlaodLink,
+                                            currentUser.getUid(),
+                                            currentUser.getPhotoUrl().toString());
+                                    //
+                                    // Añadir publicación a la base de datos de fireBase
+                                    addPost(post);
+
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    // si algo va mal al subir la imagen
+
+                                    showMessage("Ocurrio un error");
+                                    popupClickProgress.setVisibility(View.INVISIBLE);
+                                    popupAddBton.setVisibility(View.VISIBLE);
+
+                                }
+                            });
+                        }
+                    });
+
+                } else {
+                    showMessage("Please verify all input fields and choose Post Image");
+                    popupAddBton.setVisibility(View.VISIBLE);
+                    popupClickProgress.setVisibility(View.INVISIBLE);
+
+                }
+
+
             }
         });
+
+
     }
 
+    private void addPost(Post post) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Publicaciones").push();
+        // obtener ID única de publicación y upadte clave de publicación
+
+        String key = myRef.getKey();
+        post.setPostKey(key);
+
+        // agregar datos de publicación a la base de datos de base de fuego
+        myRef.setValue(post).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                showMessage("Exitoso");
+                popupClickProgress.setVisibility(View.INVISIBLE);
+                popupAddBton.setVisibility(View.VISIBLE);
+                popAddPost.dismiss();
+            }
+        });
+
+
+    }
+
+    private void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
 
     //El usuario escogio imagen
     void checkAndRequestForPermission() {
@@ -174,4 +261,4 @@ public class OrganizarFiesta extends AppCompatActivity {
         }
 
     }
-    }
+}
