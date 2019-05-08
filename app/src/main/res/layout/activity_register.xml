@@ -15,7 +15,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/avatar"
-       app:civ_border_color="@color/colorAccent"/>
+       app:civ_border_color="@color/colorAccent"
+       />
 
 
     <LinearLayout

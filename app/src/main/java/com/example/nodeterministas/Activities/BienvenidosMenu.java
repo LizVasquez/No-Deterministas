@@ -18,7 +18,6 @@ import com.bumptech.glide.Glide;
 import com.example.nodeterministas.BloquearAplicaciones;
 import com.example.nodeterministas.Busquemos;
 import com.example.nodeterministas.Main;
-import com.example.nodeterministas.OrganizarFiesta;
 import com.example.nodeterministas.R;
 import com.example.nodeterministas.Temporizador;
 import com.google.firebase.auth.FirebaseAuth;
