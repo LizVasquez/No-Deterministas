@@ -56,7 +56,7 @@ public class ListaAplicacionesInstaladas extends AppCompatActivity implements Vi
 
         RecyclerView otrasAppRv = (RecyclerView) findViewById(R.id.contenedor_aplicaciones);
         otrasAppRv.setHasFixedSize(false);
-
+List<String> ListaAplicacionesABloquear;
         LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext());
         layout.setOrientation(LinearLayoutManager.VERTICAL);
 

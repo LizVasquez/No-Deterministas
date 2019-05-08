@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-public class AdaptadorRecyclerAplicaciones extends RecyclerView.Adapter<viewHolder>{
+public class AdaptadorRecyclerAplicaciones extends RecyclerView.Adapter<viewHolder> implements {
 
     List<FuenteAplicacion> ListaObjeto;
 
