@@ -82,6 +82,7 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         if(view.getId() == R.id.enviarDatos_btn){
             //Intent intent = new Intent(enviarDatosBtn.getContext(), Temporizador.class);
+            //Intent
             Intent intent = new Intent(enviarDatosBtn.getContext(), ListaAplicacionesInstaladas.class);
             startActivity(intent);
         }
