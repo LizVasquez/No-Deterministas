@@ -11,8 +11,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.nodeterministas.Activities.ListaAplicacionesInstaladas;
+import com.example.nodeterministas.Activities.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,10 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
 
     Button enviarDatosBtn;
     Button otrasAplicacionesBtn;
+
+    AdaptadorRecyclerAplicaciones adaptador;
+
+    StringBuffer sb = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +79,8 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
         LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext());
         layout.setOrientation(LinearLayoutManager.VERTICAL);
 
-        contenedor.setAdapter(new AdaptadorRecyclerAplicaciones(lista));
+        adaptador = new AdaptadorRecyclerAplicaciones(lista);
+        contenedor.setAdapter(adaptador);
         contenedor.setLayoutManager(layout);
 
     }
@@ -90,8 +97,22 @@ public class BloquearAplicaciones extends AppCompatActivity implements View.OnCl
             startActivity(intent);
         }
         if(view.getId() == R.id.enviarDatos_btn){
-            Intent intent = new Intent(enviarDatosBtn.getContext(), Temporizador.class);
-            startActivity(intent);
+            //Iniciamos el siguiente activity para controlar el temporizador
+            /*Intent intent = new Intent(enviarDatosBtn.getContext(), Temporizador.class);
+            startActivity(intent);*/
+            sb = new StringBuffer();
+
+            for(FuenteAplicacion app : adaptador.aplicacionesChequeadas){
+                sb.append(app.getNombre());
+                sb.append("\n");
+            }
+
+            if(adaptador.aplicacionesChequeadas.size() > 0){
+                Toast.makeText(this, sb.toString(), Toast.LENGTH_SHORT).show();
+            }
+            if(adaptador.aplicacionesChequeadas.size() == 0){
+                Toast.makeText(this, "Por favor selecciona una opcion para continuar", Toast.LENGTH_SHORT);
+            }
         }
     }
 }

@@ -17,6 +17,8 @@ public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickL
     ImageView imgApp;
     TextView nombreApp;
 
+    ItemClickListener itemClickListener;
+
     public viewHolder(View itemView) {
         super(itemView);
         switchAplicacion = (Switch) itemView.findViewById(R.id.switch_aplicacion);
@@ -29,12 +31,19 @@ public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickL
 
     @Override
     public void onClick(View view) {
+        /* PRUEBA DE SELECCION DE ITEMS RECYCLERVIEW
         if(view.getId() == R.id.switch_aplicacion){
             if(switchAplicacion.isChecked())
                 Toast.makeText(switchAplicacion.getContext(), nombreApp.getText() + " Activado", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(switchAplicacion.getContext(), nombreApp.getText() + " Desactivado", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+        // Uso de Interfaz para seleccion de nuestra vista, Interfaz -> ItemClickListener.java
+        this.itemClickListener.onItemClick(view, getLayoutPosition());
+    }
+
+    public void setOnClickItemListener(ItemClickListener ic){
+        this.itemClickListener = ic;
     }
 
 }
