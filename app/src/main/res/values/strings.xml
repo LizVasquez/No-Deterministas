@@ -55,4 +55,6 @@
     <string name="tipo_de_musica">Tipo de música</string>
     <string name="titulo">Título</string>
     <string name="confirmar_cambios">Confirmar Cambios</string>
+    <string name="contacto_cardview">Contacto</string>
+    <string name="numero_cardview">Numero</string>
 </resources>

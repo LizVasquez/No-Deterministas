@@ -11,10 +11,14 @@ import com.example.nodeterministas.R;
 
 public class Contactos_emergencia extends AppCompatActivity {
 
+    Button misContactos;
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactos_emergencia);
+
+        misContactos = findViewById(R.id.misContactos);
 
         Button abrirCont = (Button) findViewById(R.id.abrirCont);
         final Intent iContact = new Intent(Intent.ACTION_PICK, ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
@@ -22,7 +26,14 @@ public class Contactos_emergencia extends AppCompatActivity {
             @Override
             public void onClick (View v) {
                 startActivity(iContact);
+            }
+        });
 
+        misContactos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Contactos_emergencia.this, MisContactos.class);
+                startActivity(intent);
             }
         });
     }

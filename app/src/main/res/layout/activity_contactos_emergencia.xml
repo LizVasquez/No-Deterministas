@@ -30,6 +30,15 @@
         />
 
     <Button
+        android:id="@+id/misContactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="Ver mis Contactos"
+        android:textColor="@color/white" />
+
+    <Button
         android:id="@+id/abrirCont"
         android:layout_width="match_parent"
         android:layout_height="80dp"
