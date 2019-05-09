@@ -27,7 +27,7 @@
         android:layout_below="@+id/text_view_contacto"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
-        android:src="@drawable/contacto" />
+        />
 
     <Button
         android:id="@+id/abrirCont"

@@ -15,7 +15,7 @@
         <activity android:name=".Activities.Contactos_emergencia"></activity>
         <activity android:name=".PruebaCont2" />
         <activity android:name=".Activities.OrganizarFiestas" />
-        <activity android:name=".Activities.ListaAplicacionesInstaladas" />
+        <activity android:name=".ListaAplicacionesInstaladas"></activity>
         <activity android:name=".BloquearAplicaciones" />
         <activity android:name=".Activities.Register" />
         <activity
