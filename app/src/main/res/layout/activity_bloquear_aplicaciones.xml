@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/fondo_login">
-    
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
@@ -16,25 +16,25 @@
     </android.support.v7.widget.RecyclerView>
 
 
-
-
     <Button
         android:id="@+id/otrasaplicaciones_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/otras_aplicaciones"
-        android:background="@color/colorAccent"
         android:layout_marginTop="100dp"
-        android:textColor="@color/white"/>
+        android:background="@drawable/button_background_menu"
+        android:text="@string/otras_aplicaciones"
+        android:textColor="#ffffff"
+
+        />
 
     <Button
         android:id="@+id/enviarDatos_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enviar_datos_btn"
         android:layout_marginTop="5dp"
-        android:background="@color/colorAccent"
-        android:textColor="@color/white"/>
+        android:background="@drawable/button_background_menu"
+        android:text="@string/enviar_datos_btn"
+        android:textColor="@color/white" />
 
 
 
