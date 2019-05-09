@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fondo_humo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.Contactos_emergencia">
+
+    <TextView
+        android:id="@+id/text_view_contacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/knewave"
+        android:textColor="#F7EAEA"
+        android:text="Contactos"
+        android:textSize="50sp"/>
+
+    <ImageView
+        android:id="@+id/drawable_contacto"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/text_view_contacto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/contacto" />
+
+    <Button
+        android:id="@+id/abrirCont"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/button_background"
+        android:text="Abrir Contactos"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#F7EAEA"
+        android:gravity="center"
+        android:textSize="18sp"
+        tools:text="Abrir Contactos" />
+
+
+
+
+</RelativeLayout>
