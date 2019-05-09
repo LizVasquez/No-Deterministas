@@ -29,7 +29,13 @@ public class Mapa extends AppCompatActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
 
-        this.googleMap.addMarker(new MarkerOptions().title("Marcador 1").position(new LatLng(0, 0)).snippet("Descripcion"));
+        this.googleMap.addMarker(new MarkerOptions().title("La Paz").position(new LatLng(-16.5, -68.1500015)).snippet("Ciudad"));
+        this.googleMap.addMarker(new MarkerOptions().title("Santa Cruz").position(new LatLng(-17.7862892	, -63.1811714)).snippet("Ciudad"));
+
+
+
+
+
 
         this.googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
