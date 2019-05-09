@@ -15,7 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nodeterministas.Activities.BienvenidosMenu;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -41,6 +46,10 @@ public class Temporizador extends AppCompatActivity {
     private long mEndTime;
 
 
+    ArrayList<PackageName> aplicacionesPrincipales = new ArrayList<>();
+    ArrayList<PackageName> aplicacionesOpcionales = new ArrayList<>();
+    ArrayList<PackageName> todosLosPackageName = new ArrayList<>();
+
     Random random;
     int ClaveAleatorio;
 
@@ -48,6 +57,21 @@ public class Temporizador extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temporizador);
+
+        cargarAplicacionesPrincipales();
+        cargarAplicacionesOpcionales();
+        juntarApps();
+
+        //Verificacion de carga correcta de Ambos SharedPreferences
+        StringBuffer stringBuffer = new StringBuffer();
+
+        for(PackageName p : todosLosPackageName){
+            stringBuffer.append(p.packageName);
+            stringBuffer.append("\n");
+        }
+
+        Toast.makeText(this, stringBuffer.toString(), Toast.LENGTH_LONG).show();
+
 
         mEditTextTime = findViewById(R.id.edit_text_inputtime);
         mEditTextClave = findViewById(R.id.edit_text_clave);
@@ -273,8 +297,24 @@ public class Temporizador extends AppCompatActivity {
         alertDialogBuilder.create().show();
     }
 
+    public void cargarAplicacionesPrincipales(){
+        SharedPreferences sharedPreferences = getSharedPreferences("AplicacionesGuardadas", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String aplicacionesGuardadas = sharedPreferences.getString("Aplicaciones Guardadas", null);
+        Type type = new TypeToken<List<PackageName>>() {}.getType();
+        aplicacionesPrincipales = gson.fromJson(aplicacionesGuardadas, type);
+    }
 
+    public void cargarAplicacionesOpcionales(){
+        SharedPreferences sharedPreferences = getSharedPreferences("OtrasAplicacionesGuardadas", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String aplicacionesGuardadas = sharedPreferences.getString("Otras Aplicaciones Guardadas", null);
+        Type type = new TypeToken<List<PackageName>>() {}.getType();
+        aplicacionesOpcionales = gson.fromJson(aplicacionesGuardadas, type);
+    }
 
-
-
+    public void juntarApps(){
+        todosLosPackageName.addAll(aplicacionesPrincipales);
+        todosLosPackageName.addAll(aplicacionesOpcionales);
+    }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activities.ListaAplicacionesInstaladas"
+    tools:context=".ListaAplicacionesInstaladas"
     android:background="@drawable/fondo_login">
 
     <android.support.v7.widget.RecyclerView

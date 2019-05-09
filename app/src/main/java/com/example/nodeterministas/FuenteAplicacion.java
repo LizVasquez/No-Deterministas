@@ -4,15 +4,19 @@ public class FuenteAplicacion {
 
     String nombre;
     int imagenAplicacion;
+    String packageName;
 
-    public FuenteAplicacion(String nombre, int imagenAplicacion) {
+    public FuenteAplicacion(String nombre, int imagenAplicacion, String packageName) {
         this.nombre = nombre;
         this.imagenAplicacion = imagenAplicacion;
+        this.packageName = packageName;
     }
 
     public String getNombre() {
         return nombre;
     }
+
+    public String getPackageName() { return packageName; }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

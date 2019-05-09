@@ -5,12 +5,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.Switch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdaptadorRecyclerOtrasApp extends RecyclerView.Adapter<viewHolderAplicaciones> {
 
     List<FuenteOtrasAplicaciones> ListaOtrasApp;
+    ArrayList<FuenteOtrasAplicaciones> checkedApps = new ArrayList<>();
 
     public AdaptadorRecyclerOtrasApp(List<FuenteOtrasAplicaciones> listaOtrasApp) {
         ListaOtrasApp = listaOtrasApp;
@@ -26,6 +30,19 @@ public class AdaptadorRecyclerOtrasApp extends RecyclerView.Adapter<viewHolderAp
     @Override
     public void onBindViewHolder(@NonNull viewHolderAplicaciones holder, int position) {
         holder.nombreOtraApp.setText(ListaOtrasApp.get(position).getNombreOtraApp());
+
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Switch sw = (Switch)v;
+                //Revisar si el switch esta activado
+                if(sw.isChecked()){
+                    checkedApps.add(ListaOtrasApp.get(pos));
+                }else if(!sw.isChecked()){
+                    checkedApps.remove(ListaOtrasApp.get(pos));
+                }
+            }
+        });
     }
 
     @Override
