@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/confirmar_cambios"
-        android:background="@color/colorAccent"
+        android:background="@drawable/button_background_menu"
         android:textColor="@color/white"/>
 
 </LinearLayout>

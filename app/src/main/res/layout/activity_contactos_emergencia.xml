@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/fondo_humo"
+    android:background="@drawable/fondo_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,11 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="215dp"
         android:fontFamily="@font/knewave"
-        android:textColor="#F7EAEA"
-        android:text="Contactos"
-        android:textSize="50sp"/>
+        android:text="CONTACTOS"
+        android:textColor="#212121"
+        android:textSize="50sp" />
 
     <ImageView
         android:id="@+id/drawable_contacto"
@@ -42,12 +42,15 @@
         android:id="@+id/abrirCont"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/button_background"
-        android:text="Abrir Contactos"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="350dp"
-        android:layout_marginBottom="10dp"
-        android:textColor="#F7EAEA"
+        android:layout_marginBottom="153dp"
+        android:background="@drawable/button_background_menu"
         android:gravity="center"
+        android:text="Abrir Contactos"
+        android:textColor="#F7EAEA"
         android:textSize="18sp"
         tools:text="Abrir Contactos" />
 
