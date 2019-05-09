@@ -3,16 +3,19 @@
     package="com.example.nodeterministas">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS " />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="F|Y"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.OrganizarFiestas"></activity>
-        <activity android:name=".Activities.ListaAplicacionesInstaladas"></activity>
+        <activity android:name=".Activities.Contactos_emergencia"></activity>
+        <activity android:name=".PruebaCont2" />
+        <activity android:name=".Activities.OrganizarFiestas" />
+        <activity android:name=".Activities.ListaAplicacionesInstaladas" />
         <activity android:name=".BloquearAplicaciones" />
         <activity android:name=".Activities.Register" />
         <activity

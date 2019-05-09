@@ -76,7 +76,7 @@ public class BienvenidosMenu extends AppCompatActivity
             startActivity(intent);
         }
         if (view.getId() == contactEmergencia.getId()) {
-            Intent intent = new Intent(this, Main.class);
+            Intent intent = new Intent(this, Contactos_emergencia.class);
             startActivity(intent);
 
         }
