@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tool_bar_view"
-            android:background="@drawable/diamante">
+            android:background="@drawable/fondo4">
 
 
             <TextView
@@ -41,6 +41,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/knewave"
+                android:textColor="#F0E9E9"
                 android:text="@string/bienvenidos"
                 android:textSize="40sp" />
 

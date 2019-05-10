@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/fondo_login"
+    android:background="@drawable/fondo3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,7 +17,7 @@
         android:layout_marginTop="215dp"
         android:fontFamily="@font/knewave"
         android:text="CONTACTOS"
-        android:textColor="#212121"
+        android:textColor="#F0E9E9"
         android:textSize="50sp" />
 
     <ImageView
