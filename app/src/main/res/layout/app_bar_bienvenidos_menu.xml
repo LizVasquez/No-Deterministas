@@ -71,6 +71,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_background_menu"
                     android:fontFamily="@font/knewave"
+                    android:textColor="@color/white"
                     android:onClick="onClick"
                     android:text="@string/eventos" />
 
@@ -83,6 +84,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_background_menu"
                     android:fontFamily="@font/knewave"
+                    android:textColor="@color/white"
                     android:onClick="onClick"
                     android:text="@string/ya_estoy_en_la_fiesta" />
 
@@ -91,6 +93,7 @@
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_menu"
@@ -106,6 +109,7 @@
                     android:layout_margin="20dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_background_menu"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/knewave"
                     android:onClick="onClick"
                     android:text="@string/orgaqniza_tu_fiesta"

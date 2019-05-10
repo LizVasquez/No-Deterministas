@@ -48,6 +48,7 @@
         android:layout_marginTop="350dp"
         android:layout_marginBottom="153dp"
         android:background="@drawable/button_background_menu"
+        android:fontFamily="@font/knewave"
         android:gravity="center"
         android:text="Abrir Contactos"
         android:textColor="#F7EAEA"
