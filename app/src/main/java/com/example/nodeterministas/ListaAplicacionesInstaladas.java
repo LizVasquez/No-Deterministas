@@ -1,6 +1,5 @@
 package com.example.nodeterministas;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -9,16 +8,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.nodeterministas.AdaptadorRecyclerAplicaciones;
-import com.example.nodeterministas.AdaptadorRecyclerOtrasApp;
-import com.example.nodeterministas.BloquearAplicaciones;
-import com.example.nodeterministas.FuenteOtrasAplicaciones;
-import com.example.nodeterministas.R;
+import com.example.nodeterministas.Models.FuenteOtrasAplicaciones;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

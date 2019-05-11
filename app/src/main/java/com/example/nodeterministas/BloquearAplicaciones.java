@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.nodeterministas.Activities.Temporizador;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

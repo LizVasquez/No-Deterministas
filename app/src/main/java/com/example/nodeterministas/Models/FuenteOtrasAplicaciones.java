@@ -1,4 +1,4 @@
-package com.example.nodeterministas;
+package com.example.nodeterministas.Models;
 
 public class FuenteOtrasAplicaciones {
 

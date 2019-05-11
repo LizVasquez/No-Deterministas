@@ -24,7 +24,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.MisContactos"></activity>
+        <activity android:name=".Activities.PostDetailActivity1"></activity>
+        <activity android:name=".Activities.QuienDaCasa1" />
+        <activity android:name=".Activities.PostGetailActivity" />
+        <activity android:name=".Activities.MisContactos" />
         <activity android:name=".Activities.Contactos_emergencia" />
         <activity android:name=".PruebaCont2" />
         <activity android:name=".Activities.OrganizarFiestas" />
@@ -36,7 +39,7 @@
             android:label="@string/title_activity_bienvenidos_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.Idioma" />
-        <activity android:name=".Temporizador" />
+        <activity android:name=".Activities.Temporizador" />
         <activity android:name=".Mapa" />
         <activity android:name=".Activities.Login" />
         <activity
@@ -48,7 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Busquemos" /> <!-- <activity android:name="com.example.firebase1.Bienvenidos" /> -->
+        <activity android:name=".Activities.Busquemos" /> <!-- <activity android:name="com.example.firebase1.Bienvenidos" /> -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

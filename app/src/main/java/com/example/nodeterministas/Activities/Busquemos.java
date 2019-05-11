@@ -1,4 +1,4 @@
-package com.example.nodeterministas;
+package com.example.nodeterministas.Activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -8,32 +8,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import com.example.nodeterministas.Mapa;
+import com.example.nodeterministas.R;
 
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.PermissionRequest;
 
-public class Busquemos extends AppCompatActivity {
-
+public class Busquemos extends AppCompatActivity implements View.OnClickListener{
+    Button GoogleMaps, QuienDaCasa1;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_busquemos);
-            Button google_maps = (Button) findViewById(R.id.google_maps);
-            google_maps.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view){
+            GoogleMaps = findViewById(R.id.button_google_maps);
+            QuienDaCasa1=findViewById(R.id.button_quiendacasa);
 
 
-                    // Creamos un intent para ir a otro activity
-                    Intent intent = new Intent(Busquemos.this,Mapa.class);
-                    startActivity(intent);
-                }
-            });
+
 
 // Request Permissions
             String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -46,6 +37,22 @@ public class Busquemos extends AppCompatActivity {
                             .build());
 
         }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() ==GoogleMaps.getId()) {
+            Intent(Mapa.class);
+        }if (view.getId() ==QuienDaCasa1.getId()) {
+
+            Intent intent =new Intent(this,QuienDaCasa1.class);
+            startActivity(intent);
+        }
+    }
+
+    private void Intent(Class clase){
+        Intent intent =new Intent(this,clase);
+        startActivity(intent);
+    }
 
         @Override
         public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
